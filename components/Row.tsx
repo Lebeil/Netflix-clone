@@ -4,6 +4,8 @@ import { Movie } from '../typings';
 import Thumbnail from './Thumbnail';
 
 interface Props {
+    // Firebase
+    // movie: Movie | DocumentData
     title: string
     movies: Movie[]
 }
@@ -18,7 +20,7 @@ const Row = ({ title, movies }: Props) => {
                 // onClick={() => handleClick('left')}
                 />
 
-                <div className="flex items-center space-x-0.5 overflow-x-scroll scrollbar-hide md:space-x-2.5 md:p-2">
+                <div className="flex scrollbar-hidde items-center space-x-0.5 overflow-x-scroll scrollbar-hide md:space-x-2.5 md:p-2">
                     {movies.map((movie)=> (
                         <Thumbnail key={movie.id} movie={movie}/>
                     ))}
