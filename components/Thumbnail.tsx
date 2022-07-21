@@ -14,9 +14,10 @@ const Thumbnail = ({ movie }: Props) => {
             <Image
                 src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path || movie.poster_path
                     }`}
-                className="rounded-sm object-cover md:rounded"
+                className="rounded-sm object-cover md:rounded absolute"
                 layout="fill"
             />
+            <h1 className='absolute text-shadow-xl ml-2 top-2 lg:top-24'>{movie?.title || movie?.name || movie?.original_name}</h1>
         </div>
     );
 };
