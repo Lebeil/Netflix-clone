@@ -1,5 +1,4 @@
 import {
-    AuthProvider,
     createUserWithEmailAndPassword,
     onAuthStateChanged,
     signInWithEmailAndPassword,
@@ -33,7 +32,7 @@ interface AuthProviderProps {
     children: React.ReactNode
 }
 
-export const authProvider = ({ children }: AuthProviderProps) => {
+export const AuthProvider = ({ children }: AuthProviderProps) => {
     const [loading, setLoading] = useState(false)
     const [user, setUser] = useState<User | null>(null)
     const [error, setError] = useState(null)
