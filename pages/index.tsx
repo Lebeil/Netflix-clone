@@ -33,7 +33,7 @@ const Home = ({
   const { loading } = useAuth()
   const showModal = useRecoilValue(modalState)
 
-  if(loading) return null
+  if (loading) return null
 
   return (
     <div className="relative h-screen bg-gradient-to-b lg:h-[140vh]">
@@ -55,7 +55,7 @@ const Home = ({
           <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
-      { showModal && <Modal/>}
+      {showModal && <Modal />}
     </div>
   )
 }
