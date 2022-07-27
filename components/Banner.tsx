@@ -4,13 +4,16 @@ import Image from 'next/image'
 import { baseUrl } from '../constants/movie';
 import { FaPlay } from 'react-icons/fa'
 import { InformationCircleIcon } from '@heroicons/react/outline'
+import { useRecoilState } from 'recoil';
+import { modalState, movieState } from '../atoms/modalAtom';
 interface Props {
     netflixOrignals: Movie[]
 }
 
 const Banner = ({ netflixOrignals }: Props) => {
     const [movie, setMovie] = useState<Movie | null>(null);
-    console.log(netflixOrignals);
+    const [showModal, setShowModal] = useRecoilState(modalState);
+    const [currentMovie, setCurrentMovie] = useRecoilState(movieState);
 
     // picture random
     useEffect(() => {
@@ -42,8 +45,8 @@ const Banner = ({ netflixOrignals }: Props) => {
                 <button
                     className="bannerButton bg-[gray]/70"
                     onClick={() => {
-                        // setCurrentMovie(movie)
-                        // setShowModal(true)
+                        setCurrentMovie(movie)
+                        setShowModal(true)
                     }}
                 >
                     <InformationCircleIcon className="h-5 w-5 md:h-8 md:w-8" /> More Info
