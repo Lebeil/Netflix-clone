@@ -57,6 +57,8 @@ const Plans = () => {
                         <div className='planBox'>Standard</div>
                         <div className='planBox'>Standard</div>
                     </div>
+                    {/* <Table /> */}
+                    <button>Subscribe</button>
                 </div>
             </main>
         </div>
