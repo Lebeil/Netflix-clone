@@ -45,7 +45,7 @@ const Home = ({
 
   if (loading) return null
 
-  if (!subscription) return <Plans/>
+  if (!subscription) return <Plans products={products}/>
 
   return (
     <div className={`relative h-screen bg-gradient-to-b lg:h-[140vh] ${showModal && '!h-screen overflow-hidden'}`}>
@@ -116,7 +116,7 @@ export const getServerSideProps = async () => {
       horrorMovies: horrorMovies.results,
       romanceMovies: romanceMovies.results,
       documentaries: documentaries.results,
-      products: products,
+      products: products || null,
     },
   }
 }
